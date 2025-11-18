@@ -20,7 +20,6 @@ namespace NotARealCompanyWithViews.Models
 
     public class OrderDTO
     {
-        // Can be either string, int or Guid depending on the database design
         public string? Id { get; set; }
         public int? CustomerId { get; set; }
         public string? CustomerEmail { get; set; } = string.Empty;

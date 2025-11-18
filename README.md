@@ -39,7 +39,10 @@ dotnet run
 
 - `ordersFromInput` (IEnumerable\<OrderInputData\>): The raw input data.
 
-Although the desired format is met through DTOs, there is no direct method of exporting a JSON file in this iteratation.
+The desired format is met through DTOs and we have our output in the same **SAMPLE** folder.
+There is no interactive method of exporting a JSON file in this iteration.
+It is done automatically, rewriting the existing `output.json` if exists.
+The constants used for this are `LOCAL_JSON_PATH_INPUT` and `LOCAL_JSON_PATH_OUTPUT`.
 
 JSON format:
 ```json

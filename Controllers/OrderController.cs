@@ -46,7 +46,7 @@ namespace NotARealCompanyWithViews.Controllers
                 // After changing the constant to false, this block will attempt to call the API (provided URL is valid)
                 if (Constants.Constants.IS_LOCAL)
                 {
-                    ordersFromInputFinal = await _orderService.ReadSampleFileAsync(Constants.Constants.LOCAL_JSON_PATH);
+                    ordersFromInputFinal = await _orderService.ReadSampleFileAsync(Constants.Constants.LOCAL_JSON_PATH_INPUT);
                 }
                 else if (ordersFromInput != null && ordersFromInput.Any())
                 {
@@ -72,9 +72,15 @@ namespace NotARealCompanyWithViews.Controllers
             return await Task.Run(() => orders);
         }
 
+        public async Task ExportJson(IEnumerable<OrderDTO> model)
+        {
+            await _orderService.SerializeToJsonAsync(model);
+        }
+
         public async Task<IActionResult> Index()
         {
             var orderData = await GetOrderInformation([]);
+            await ExportJson(orderData);
             return await Task.Run(() => View(orderData));
         }
 

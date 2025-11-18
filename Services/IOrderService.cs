@@ -8,5 +8,6 @@ namespace NotARealCompanyWithViews.Services
         Task<IEnumerable<OrderInputData>> ReadSampleFileAsync(string jsonPath);
         Task<IEnumerable<OrderInputData>> GetOrdersFromApiAsync(string url, HttpClient client);
         Task<IEnumerable<OrderDTO>> MapOrderDTOsAsync(IEnumerable<OrderInputData> orderInputData);
+        Task SerializeToJsonAsync(IEnumerable<OrderDTO> orders);
     }
 }

@@ -23,6 +23,12 @@ namespace NotARealCompanyWithViews.Services
             Converters = { new JsonStringEnumConverter(JsonNamingPolicy.SnakeCaseLower) } // underscore
         };
 
+        public async Task SerializeToJsonAsync(IEnumerable<OrderDTO> orders)
+        {
+            await using FileStream createStream = File.Create(Constants.Constants.LOCAL_JSON_PATH_OUTPUT);
+            await JsonSerializer.SerializeAsync(createStream, orders, SerializerOptions);
+        }
+
         public async Task<IEnumerable<OrderInputData>> ReadSampleFileAsync(string jsonPath)
         {
             IEnumerable<OrderInputData> orders;
