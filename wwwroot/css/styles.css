@@ -1,0 +1,159 @@
+body {
+    background-color: #1e1e1e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: system-ui, sans-serif;
+}
+
+table {
+    display: none;
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 80%;
+    max-width: 800px;
+    background-color: #2a2a2a;
+    border-radius: 12px;
+    overflow: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    font-size: 20px;
+    color: #f1f1f1;
+    scrollbar-gutter: stable;
+    scrollbar-gutter: stable both-edges;
+}
+
+thead tr td:first-of-type,
+thead tr th:first-of-type {
+    border-top-left-radius: 12px;
+}
+
+thead tr td:last-of-type,
+thead tr th:last-of-type {
+    border-top-right-radius: 12px;
+}
+
+tbody tr:last-of-type td:first-of-type {
+    border-bottom-left-radius: 12px;
+}
+
+tbody tr:last-of-type td:last-of-type {
+    border-bottom-right-radius: 12px;
+}
+
+thead {
+    background-color: #333;
+    font-weight: 600;
+    color: #fff;
+    border-bottom: 3px solid #555;
+}
+
+thead th {
+    background: #333;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+th,
+td {
+    padding: 16px 20px;
+    text-align: left;
+}
+
+td {
+    max-width: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #262626;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #1f1f1f;
+}
+
+tbody tr:hover {
+    background-color: #3a3a3a;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    font-size: 48px;
+}
+
+.loader {
+    display: block;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid #555;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+.loader-container {
+    position: absolute;
+    top: 42%;
+    left: 47%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.table-container {
+    height: 80vh;
+    overflow: hidden;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    z-index: 2;
+    scrollbar-gutter: stable;
+    scrollbar-gutter: stable both-edges;
+}
+
+.table-container:hover {
+    overflow-y: auto;
+}
+
+/* Scrollbars */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #f3f3f3 #555;
+}
+
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #555;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #f3f3f3;
+    border-radius: 20px;
+    border: 3px solid #555;
+}
+
+.results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+    font-size: 24px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}

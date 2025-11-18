@@ -1,0 +1,101 @@
+﻿@model IEnumerable<NotARealCompanyWithViews.Models.OrderDTO>
+
+@{
+	ViewData["Title"] = "NotARealCompanyWithViews | Home";
+}
+
+<h1>Demo View</h1>
+
+<div class="results">Rows: @Model.Count()</div>
+
+<div class="loader-container">
+	<div class="loader"></div>
+</div>
+
+<div class="table-container">
+	<table>
+		<thead>
+			<tr>
+				<th>
+					@Html.DisplayNameFor(model => model.Id)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.CustomerId)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.CustomerEmail)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.CustomerForenames)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.CustomerSurname)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.CustomerAddress)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.ProductName)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.ProductSku)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.ProductQuantity)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.ProductPrice)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.ShippingAddress)
+				</th>
+				<th>
+					@Html.DisplayNameFor(model => model.PurchasedOn)
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td title="@item.Id">
+						@Html.DisplayFor(modelItem => item.Id)
+					</td>
+					<td title="@item.CustomerId">
+						@Html.DisplayFor(modelItem => item.CustomerId)
+					</td>
+					<td title="@item.CustomerEmail">
+						@Html.DisplayFor(modelItem => item.CustomerEmail)
+					</td>
+					<td title="@item.CustomerForenames">
+						@Html.DisplayFor(modelItem => item.CustomerForenames)
+					</td>
+					<td title="@item.CustomerSurname">
+						@Html.DisplayFor(modelItem => item.CustomerSurname)
+					</td>
+					<td title="@item.CustomerAddress">
+						@Html.DisplayFor(modelItem => item.CustomerAddress)
+					</td>
+					<td title="@item.ProductName">
+						@Html.DisplayFor(modelItem => item.ProductName)
+					</td>
+					<td title="@item.ProductSku">
+						@Html.DisplayFor(modelItem => item.ProductSku)
+					</td>
+					<td title="@item.ProductQuantity">
+						@Html.DisplayFor(modelItem => item.ProductQuantity)
+					</td>
+					<td title="@item.ProductPrice">
+						@Html.DisplayFor(modelItem => item.ProductPrice)
+					</td>
+					<td title="@item.ShippingAddress">
+						@Html.DisplayFor(modelItem => item.ShippingAddress)
+					</td>
+					<td title="@item.PurchasedOn">
+						@Html.DisplayFor(modelItem => item.PurchasedOn)
+					</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>
